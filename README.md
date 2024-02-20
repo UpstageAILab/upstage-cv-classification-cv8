@@ -9,7 +9,17 @@
 
 ## 0. Overview
 ### Environment
-- _Write Development environment_
+- albumentations==1.3.1
+ipykernel==6.27.1
+ipython==8.15.0
+ipywidgets==8.1.1
+jupyter==1.0.0
+matplotlib-inline==0.1.6
+numpy==1.26.0
+pandas==2.1.4
+Pillow==9.4.0
+timm==0.9.12
+
 
 ### Requirements
 - _Write Requirements_
@@ -18,65 +28,60 @@
 
 ### Overview
 
-- _Write competition information_
+- 문서 분류 문제
 
 ### Timeline
 
-- ex) January 10, 2024 - Start Date
-- ex) February 10, 2024 - Final submission deadline
+-  February 5, 2024 - Start Date
+-  February 19, 2024 - Final submission deadline
 
 ## 2. Components
 
 ### Directory
 
-- _Insert your directory structure_
+- baseline 코드 이해 및 복습
 
-e.g.
-```
-├── code
-│   ├── jupyter_notebooks
-│   │   └── model_train.ipynb
-│   └── train.py
-├── docs
-│   ├── pdf
-│   │   └── (Template) [패스트캠퍼스] Upstage AI Lab 1기_그룹 스터디 .pptx
-│   └── paper
-└── input
-    └── data
-        ├── eval
-        └── train
-```
 
 ## 3. Data descrption
 
 ### Dataset overview
 
-- _Explain using data_
+- train data
+  - 1570
+- test data
+  - 3200
+
 
 ### EDA
 
-- _Describe your EDA process and step-by-step conclusion_
+- A.RandomBrightnessContrast: 밝기와 대비를 무작위로 조절
+- A.GaussianBlur: 가우시안 블러를 적용하여 이미지를 흐리게 만들기
+- A.CLAHE: CLAHE (Contrast Limited Adaptive Histogram Equalization)를 적용하여 이미지의 대비를 향상
+- A.ElasticTransform: 탄성 변환(elastic transformation)을 적용하여 이미지를 뒤틀거나 찌그러뜨림
+- A.CoarseDropout: 이미지에 무작위로 구멍을 추가
 
 ### Data Processing
 
-- _Describe data processing process (e.g. Data Labeling, Data Cleaning..)_
+- hyperparameter
+
+- LR - 학습률(learning rate)
+- EPOCHS - 전체 데이터에 대해 한번 훑어보는 횟수
+- BATCH_SIZE -  한 번에 입력으로 주어지는 데이터 샘플의 수
+- num_workers -  데이터 로딩에 사용되는 CPU의 워커(worker) 수
 
 ## 4. Modeling
 
-### Model descrition
+### resnet
 
-- _Write model information and why your select this model_
+### CustomEfficientNet
 
-### Modeling Process
-
-- _Write model train and test process with capture_
 
 ## 5. Result
 
 ### Leader Board
 
-- _Insert Leader Board Capture_
-- _Write rank and score_
+- public - 0.6237
+- private - 0.6266
 
 ### Presentation
 
